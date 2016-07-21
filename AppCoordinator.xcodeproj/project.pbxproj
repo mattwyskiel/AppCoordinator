@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A4FE3ECC1D3F240200977BDD /* AppCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = A4FE3ECA1D3F240200977BDD /* AppCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4FE3ED51D3F24B900977BDD /* TabAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE3ED41D3F24B900977BDD /* TabAppCoordinator.swift */; };
+		A4FE3ED81D3F25AB00977BDD /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE3ED71D3F25AB00977BDD /* TabCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4FE3EC71D3F240200977BDD /* AppCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FE3ECA1D3F240200977BDD /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
 		A4FE3ECB1D3F240200977BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4FE3ED41D3F24B900977BDD /* TabAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabAppCoordinator.swift; path = Sources/TabAppCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		A4FE3ED71D3F25AB00977BDD /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabCoordinator.swift; path = Sources/TabCoordinator.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +50,20 @@
 		A4FE3EC91D3F240200977BDD /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A4FE3ED61D3F255000977BDD /* Tab-based */,
 				A4FE3ECA1D3F240200977BDD /* AppCoordinator.h */,
 				A4FE3ECB1D3F240200977BDD /* Info.plist */,
 			);
 			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		A4FE3ED61D3F255000977BDD /* Tab-based */ = {
+			isa = PBXGroup;
+			children = (
+				A4FE3ED71D3F25AB00977BDD /* TabCoordinator.swift */,
+				A4FE3ED41D3F24B900977BDD /* TabAppCoordinator.swift */,
+			);
+			name = "Tab-based";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5XPCB5TC44;
 						DevelopmentTeamName = "Matthew Wyskiel";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FE3ED81D3F25AB00977BDD /* TabCoordinator.swift in Sources */,
+				A4FE3ED51D3F24B900977BDD /* TabAppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +254,7 @@
 		A4FE3ED01D3F240200977BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -244,10 +262,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AppCoordinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewwyskiel.AppCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -255,6 +275,7 @@
 		A4FE3ED11D3F240200977BDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -262,6 +283,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AppCoordinator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewwyskiel.AppCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +311,7 @@
 				A4FE3ED11D3F240200977BDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
